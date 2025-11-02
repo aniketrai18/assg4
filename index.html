@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Lab Assignment IV - 25 Programs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .question {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .code-section {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .output-section {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+        
+        .output-label {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+        
+        .output-content {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+        
+        .program-number {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖥️ C Lab Assignment IV - 25 Programs</h1>
+        
+        <!-- Program 1 -->
+        <div class="program-card">
+            <span class="program-number">Program #1</span>
+            <div class="question">Q1: Print numbers from 1 to 10 using a for loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i;
+    clrscr();
+    for(i = 1; i &lt;= 10; i++) {
+        printf("%d ", i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">1 2 3 4 5 6 7 8 9 10</div>
+            </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="program-card">
+            <span class="program-number">Program #2</span>
+            <div class="question">Q2: Display even numbers between 1 and 50 using a while loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i = 1;
+    clrscr();
+    while(i &lt;= 50) {
+        if(i % 2 == 0)
+            printf("%d ", i);
+        i++;
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50</div>
+            </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card">
+            <span class="program-number">Program #3</span>
+            <div class="question">Q3: Print natural numbers up to N</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, n;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        printf("%d ", i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 15):</div>
+                <div class="output-content">Enter N: 15
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</div>
+            </div>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="program-card">
+            <span class="program-number">Program #4</span>
+            <div class="question">Q4: Find the sum of first N natural numbers using a for loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, n, sum = 0;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        sum = sum + i;
+    }
+    printf("Sum = %d", sum);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 10):</div>
+                <div class="output-content">Enter N: 10
+Sum = 55</div>
+            </div>
+        </div>
+
+        <!-- Program 5 -->
+        <div class="program-card">
+            <span class="program-number">Program #5</span>
+            <div class="question">Q5: Find the average of the first N natural numbers</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, n;
+    float sum = 0, avg;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        sum = sum + i;
+    }
+    avg = sum / n;
+    printf("Average = %.2f", avg);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 10):</div>
+                <div class="output-content">Enter N: 10
+Average = 5.50</div>
+            </div>
+        </div>
+
+        <!-- Program 6 -->
+        <div class="program-card">
+            <span class="program-number">Program #6</span>
+            <div class="question">Q6: Display the multiplication table of a given number</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, i;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= 10; i++) {
+        printf("%d x %d = %d\n", n, i, n*i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 5):</div>
+                <div class="output-content">Enter a number: 5
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50</div>
+            </div>
+        </div>
+
+        <!-- Program 7 -->
+        <div class="program-card">
+            <span class="program-number">Program #7</span>
+            <div class="question">Q7: Reverse the digits of a given number using a while loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, rev = 0, rem;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while(n != 0) {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n = n / 10;
+    }
+    printf("Reversed number = %d", rev);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 12345):</div>
+                <div class="output-content">Enter a number: 12345
+Reversed number = 54321</div>
+            </div>
+        </div>
+
+        <!-- Program 8 -->
+        <div class="program-card">
+            <span class="program-number">Program #8</span>
+            <div class="question">Q8: Count the number of digits in an integer</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, count = 0;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while(n != 0) {
+        n = n / 10;
+        count++;
+    }
+    printf("Number of digits = %d", count);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 98765):</div>
+                <div class="output-content">Enter a number: 98765
+Number of digits = 5</div>
+            </div>
+        </div>
+
+        <!-- Program 9 -->
+        <div class="program-card">
+            <span class="program-number">Program #9</span>
+            <div class="question">Q9: Find the factorial of a given number using a loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, i;
+    long fact = 1;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        fact = fact * i;
+    }
+    printf("Factorial = %ld", fact);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 5):</div>
+                <div class="output-content">Enter a number: 5
+Factorial = 120</div>
+            </div>
+        </div>
+
+        <!-- Program 10 -->
+        <div class="program-card">
+            <span class="program-number">Program #10</span>
+            <div class="question">Q10: Display the square of each number from 1 to N</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, n;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        printf("%d^2 = %d\n", i, i*i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 5):</div>
+                <div class="output-content">Enter N: 5
+1^2 = 1
+2^2 = 4
+3^2 = 9
+4^2 = 16
+5^2 = 25</div>
+            </div>
+        </div>
+
+        <!-- Program 11 -->
+        <div class="program-card">
+            <span class="program-number">Program #11</span>
+            <div class="question">Q11: Display odd numbers between 100 and 200 using a do-while loop</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i = 100;
+    clrscr();
+    do {
+        if(i % 2 != 0)
+            printf("%d ", i);
+        i++;
+    } while(i &lt;= 200);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">101 103 105 107 109 111 113 115 117 119 121 123 125 127 129 131 133 135 137 139 141 143 145 147 149 151 153 155 157 159 161 163 165 167 169 171 173 175 177 179 181 183 185 187 189 191 193 195 197 199</div>
+            </div>
+        </div>
+
+        <!-- Program 12 -->
+        <div class="program-card">
+            <span class="program-number">Program #12</span>
+            <div class="question">Q12: Find the sum of digits of a given number</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, sum = 0, rem;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    while(n != 0) {
+        rem = n % 10;
+        sum = sum + rem;
+        n = n / 10;
+    }
+    printf("Sum of digits = %d", sum);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 1234):</div>
+                <div class="output-content">Enter a number: 1234
+Sum of digits = 10</div>
+            </div>
+        </div>
+
+        <!-- Program 13 -->
+        <div class="program-card">
+            <span class="program-number">Program #13</span>
+            <div class="question">Q13: Print the pattern (* 
+                ** 
+                *** 
+                **** 
+                *****)</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, j;
+    clrscr();
+    for(i = 1; i &lt;= 5; i++) {
+        for(j = 1; j &lt;= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">* 
+* * 
+* * * 
+* * * * 
+* * * * *</div>
+            </div>
+        </div>
+
+        <!-- Program 14 -->
+        <div class="program-card">
+            <span class="program-number">Program #14</span>
+            <div class="question">Q14: Display Fibonacci series up to N terms</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, a = 0, b = 1, c, i;
+    clrscr();
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+    printf("%d %d ", a, b);
+    for(i = 3; i &lt;= n; i++) {
+        c = a + b;
+        printf("%d ", c);
+        a = b;
+        b = c;
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 10):</div>
+                <div class="output-content">Enter number of terms: 10
+0 1 1 2 3 5 8 13 21 34</div>
+            </div>
+        </div>
+
+        <!-- Program 15 -->
+        <div class="program-card">
+            <span class="program-number">Program #15</span>
+            <div class="question">Q15: Check whether a number is a palindrome</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, temp, rev = 0, rem;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    temp = n;
+    while(n != 0) {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n = n / 10;
+    }
+    if(temp == rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome");
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 121):</div>
+                <div class="output-content">Enter a number: 121
+Palindrome Number</div>
+            </div>
+        </div>
+
+        <!-- Program 16 -->
+        <div class="program-card">
+            <span class="program-number">Program #16</span>
+            <div class="question">Q16: Display all prime numbers between 1 and 100</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, j, count;
+    clrscr();
+    for(i = 2; i &lt;= 100; i++) {
+        count = 0;
+        for(j = 1; j &lt;= i; j++) {
+            if(i % j == 0)
+                count++;
+        }
+        if(count == 2)
+            printf("%d ", i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</div>
+            </div>
+        </div>
+
+        <!-- Program 17 -->
+        <div class="program-card">
+            <span class="program-number">Program #17</span>
+            <div class="question">Q17: Display the sum of even and odd numbers separately between 1 and N</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, n, evenSum = 0, oddSum = 0;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        if(i % 2 == 0)
+            evenSum += i;
+        else
+            oddSum += i;
+    }
+    printf("Sum of even numbers = %d\n", evenSum);
+    printf("Sum of odd numbers = %d", oddSum);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 10):</div>
+                <div class="output-content">Enter N: 10
+Sum of even numbers = 30
+Sum of odd numbers = 25</div>
+            </div>
+        </div>
+
+        <!-- Program 18 -->
+        <div class="program-card">
+            <span class="program-number">Program #18</span>
+            <div class="question">Q18: Calculate x^n without using pow()</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int x, n, i;
+    long power = 1;
+    clrscr();
+    printf("Enter base (x): ");
+    scanf("%d", &x);
+    printf("Enter exponent (n): ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        power = power * x;
+    }
+    printf("%d^%d = %ld", x, n, power);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for x = 2, n = 5):</div>
+                <div class="output-content">Enter base (x): 2
+Enter exponent (n): 5
+2^5 = 32</div>
+            </div>
+        </div>
+
+        <!-- Program 19 -->
+        <div class="program-card">
+            <span class="program-number">Program #19</span>
+            <div class="question">Q19: Check if a number is an Armstrong number</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+
+void main() {
+    int n, temp, rem, sum = 0;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    temp = n;
+    while(n != 0) {
+        rem = n % 10;
+        sum = sum + rem*rem*rem;
+        n = n / 10;
+    }
+    if(sum == temp)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong");
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 153):</div>
+                <div class="output-content">Enter a number: 153
+Armstrong Number</div>
+            </div>
+        </div>
+
+        <!-- Program 20 -->
+        <div class="program-card">
+            <span class="program-number">Program #20</span>
+            <div class="question">Q20: Pattern (1, 12, 123, 1234, 12345)</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, j;
+    clrscr();
+    for(i = 1; i &lt;= 5; i++) {
+        for(j = 1; j &lt;= i; j++) {
+            printf("%d", j);
+        }
+        printf("\n");
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">1
+12
+123
+1234
+12345</div>
+            </div>
+        </div>
+
+        <!-- Program 21 -->
+        <div class="program-card">
+            <span class="program-number">Program #21</span>
+            <div class="question">Q21: Pattern (5, 45, 345, 2345, 12345)</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, j;
+    clrscr();
+    for(i = 5; i &gt;= 1; i--) {
+        for(j = i; j &lt;= 5; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">5 
+4 5 
+3 4 5 
+2 3 4 5 
+1 2 3 4 5</div>
+            </div>
+        </div>
+
+        <!-- Program 22 -->
+        <div class="program-card">
+            <span class="program-number">Program #22</span>
+            <div class="question">Q22: Sum of series S = 1² + 2² + 3² + ... + n²</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, i, sum = 0;
+    clrscr();
+    printf("Enter N: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt;= n; i++) {
+        sum += i * i;
+    }
+    printf("Sum of series = %d", sum);
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for N = 5):</div>
+                <div class="output-content">Enter N: 5
+Sum of series = 55</div>
+            </div>
+        </div>
+
+        <!-- Program 23 -->
+        <div class="program-card">
+            <span class="program-number">Program #23</span>
+            <div class="question">Q23: Display all Armstrong numbers between 1 and 1000</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, temp, rem, sum, i;
+    clrscr();
+    for(i = 1; i &lt;= 1000; i++) {
+        n = i;
+        sum = 0;
+        while(n != 0) {
+            rem = n % 10;
+            sum = sum + rem*rem*rem;
+            n = n / 10;
+        }
+        if(sum == i)
+            printf("%d ", i);
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">1 153 370 371 407</div>
+            </div>
+        </div>
+
+        <!-- Program 24 -->
+        <div class="program-card">
+            <span class="program-number">Program #24</span>
+            <div class="question">Q24: Check whether a number is a perfect number</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int n, i, sum = 0;
+    clrscr();
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for(i = 1; i &lt; n; i++) {
+        if(n % i == 0)
+            sum = sum + i;
+    }
+    if(sum == n)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output (for number = 6):</div>
+                <div class="output-content">Enter a number: 6
+Perfect Number</div>
+            </div>
+        </div>
+
+        <!-- Program 25 -->
+        <div class="program-card">
+            <span class="program-number">Program #25</span>
+            <div class="question">Q25: Alphabet pattern (A, AB, ABC, ABCD, ABCDE)</div>
+            <div class="code-section">
+                <pre>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main() {
+    int i, j;
+    char ch;
+    clrscr();
+    for(i = 1; i &lt;= 5; i++) {
+        ch = 'A';
+        for(j = 1; j &lt;= i; j++) {
+            printf("%c ", ch);
+            ch++;
+        }
+        printf("\n");
+    }
+    getch();
+}</pre>
+            </div>
+            <div class="output-section">
+                <div class="output-label">Output:</div>
+                <div class="output-content">A 
+A B 
+A B C 
+A B C D 
+A B C D E</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
